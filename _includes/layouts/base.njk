@@ -1,19 +1,39 @@
 <!doctype html>
-<html {% if section %} data-current="{{ section }}"{% endif %} lang="en">
+<html {% if section %} data-current="{{ section }}" {% endif %} lang="en">
   {% include "components/head.njk" %}
   <body>
-    <header style="display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; background: #d0d0d0; border-bottom: none;">
-      <!-- logo -->
+    <!-- logo -->
+    <header style="display: flex; align-items: center; justify-content: space-between; padding: 20px 40px; background: #dcdcdc; border-bottom: none;">
       <a href="{{ '/' | url }}" style="display: flex; align-items: center;">
         <img src="/static/logo.png" alt="Life is back - Anna Mach" style="height: 100px; object-fit: contain;">
       </a>
-      
-      <!-- Nawigacja -->
-      <nav style="background-color: #d0d0d0;">
-        {% include "components/nav.njk" %}
+
+      <!-- Menu rozwijane -->
+      <nav id="nav-bar" class="navbar">
+        <ul class="menu">
+          <li><a href="/">Strona główna</a></li>
+          <li><a href="/about">O nas</a></li>
+          <li><a href="/cennik">Cennik</a></li>
+          <li><a href="/opinie">Opinie</a></li>
+          <li><a href="/rezerwacje">Rezerwacje</a></li>
+          <li><a href="/vouchers">Vouchery</a></li>
+          <li class="dropdown">
+            <a href="#">Więcej</a>
+            <ul class="submenu">
+              <li><a href="/kontakt">Kontakt</a></li>
+              <li><a href="/promocje">Promocje</a></li>
+            </ul>
+          </li>
+        </ul>
       </nav>
     </header>
 
+    <!-- Nawigacja -->
+    <nav style="background-color: #dcdcdc;">
+      {% include "components/nav.njk" %}
+    </nav>
+
+    <!-- Zawartość strony -->
     <main>
       {{ layoutContent | safe }}
     </main>
