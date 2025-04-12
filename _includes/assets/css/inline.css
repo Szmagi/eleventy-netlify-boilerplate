@@ -199,3 +199,60 @@ footer small {
     top: 50px; /* Dostosuj do wysokości nagłówka */
   }
 }
+/* Hamburger menu */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+}
+
+.menu-toggle .bar {
+  height: 3px;
+  width: 100%;
+  background-color: #333;
+  border-radius: 5px;
+}
+
+/* Styl dla nawigacji */
+#menu {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #d0d0d0;
+  padding: 40px 20px;
+  box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+#menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#menu li {
+  margin: 15px 0;
+}
+
+#menu a {
+  text-decoration: none;
+  color: #333;
+  font-size: 18px;
+}
+
+/* Pokazuje menu po kliknięciu */
+#menu.show {
+  transform: translateX(0);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+}
