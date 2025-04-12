@@ -1,196 +1,140 @@
-:root {
-	--primary: blue;
-	--secondary: white;
-	--background: #FFF0EB;
-}
-
-*, *:before, *:after {
-  box-sizing: border-box;
-}
-
-html,
+/* Istniejące style - nie zmieniamy ich */
 body {
-	padding: 0;
-	margin: 0;
-	font-family: "Avenir", "Avenir Next", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
 }
 
-body {
-	display: grid;
-	height: 100vh;
-	grid-template-rows: auto 1fr auto;
-	background-color: var(--background);
+header {
+  background: #dcdcdc;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
 }
 
-main {
-	max-width: 37.5em;
-}
-
-p,
-pre,
-code {
-	line-height: 1.5;
-}
-
-a[href],
-a[href]:visited {
-	color: var(--primary);
-}
-
-a[href]:not(:hover) {
-	text-decoration: none;
-}
-
-img {
-	max-width: 100%;
-	height: auto;
-}
-
-header,
-main,
-footer {
-	padding: 1em;
-}
-
-main {
-	padding-bottom: 2em;
-}
-
-main :first-child,
-main > article :first-child {
-	margin-top: 0;
-}
-
-pre {
-	font-size: 14px;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	-moz-tab-size: 2;
-	tab-size: 2;
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-	padding: 1em;
-	margin: .5em 0;
-}
-
-/* Header Logo (style as h2) */
-header > em {
-	display: block;
-	font-size: 2em;
-	margin: .67em 0;
-	font-weight: bold;
-	font-style: normal;
-}
-
-/* Header Nav */
-header nav ul {
-	padding: 0;
-	list-style: none;
-}
-
-header nav ul :first-child {
-	margin-left: 0;
-}
-
-header nav li {
-	display: inline-block;
-	margin: 0 .25em;
-}
-
-header nav li a {
-	padding: .25em .5em;
-	border-radius: .25em;
-}
-
-header nav li a[href]:not(:hover) {
-	text-decoration: none;
-}
-
-header nav li a[data-current="current item"] {
-	background-color: white;
-}
-
-/* Posts List */
-article {
-	margin-bottom: 1em;
-	padding-bottom: 1em;
-	border-bottom: 1px solid #eee;
-	border-bottom: 1px solid var(--secondary);
-}
-
-main > section > article > * {
-	margin-top: 0;
-	margin-bottom: .5em;
-}
-
-/* Post Tags */
-a[rel="tag"],
-a[rel="tag"]:visited {
-	display: inline-block;
-  vertical-align: text-top;
-  text-transform: uppercase;
-	letter-spacing: .1em;
-  font-size: .625em;
-  padding: 0 .5em;
-	line-height: 2em;
-	height: 2em;
-  border: 1px solid var(--secondary);
-	background-color: var(--secondary);
-	color: var(--primary);
-  border-radius: .25em;
+header a {
   text-decoration: none;
-	margin: 0 .5em .5em 0;
+  color: #333;
 }
 
-a[rel="tag"]:hover {
-	border: 1px solid var(--primary);
-	background-color: var(--primary);
-	color: var(--secondary);
+header img {
+  height: 100px;
+  object-fit: contain;
 }
 
-a[rel="tag"]:last-child {
-	margin-right: 0;
+/* Style nawigacji */
+nav {
+  background-color: #dcdcdc;
+  padding: 10px 0;
 }
 
-/* Contact Form */
-form {
-  display: grid;
-	padding: 2em 0;
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-form label {
+.navbar li {
+  margin-left: 20px;
+  position: relative;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  padding: 10px 15px;
+  display: block;
+}
+
+.navbar li:hover > a {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+/* Menu rozwijane */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.submenu li a {
+  padding: 10px;
+  color: #333;
+}
+
+.submenu li a:hover {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+/* Pokaż submenu po najechaniu */
+.navbar li:hover .submenu {
+  display: block;
+}
+
+/* Animacja do rozwijania submenu */
+.submenu {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.navbar li:hover .submenu {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Stylowanie przycisku menu mobilnego (jeśli będziesz potrzebować) */
+#menu-toggle {
   display: none;
 }
 
-input,
-textarea,
-button {
-  width: 100%;
-  padding: 1em;
-  margin-bottom: 1em;
-	font-size: 1rem;
-	font-family: "Avenir", "Avenir Next", sans-serif;
+@media (max-width: 768px) {
+  .navbar {
+    display: none;
+    flex-direction: column;
+  }
+
+  .navbar li {
+    margin-left: 0;
+  }
+
+  #menu-toggle {
+    display: block;
+  }
+
+  .navbar.active {
+    display: block;
+  }
 }
 
-input,
-textarea {
-	border: 1px solid black;
+/* Style dla głównych sekcji */
+main {
+  padding: 20px;
 }
 
-button {
-	border: 1px solid var(--primary);
-	background-color: var(--primary);
-	color: var(--secondary);
-	cursor: pointer;
+footer {
+  background-color: #dcdcdc;
+  padding: 20px;
+  text-align: center;
 }
 
-@media screen and (min-width:768px) {
-	:root {
-		font-size: 1.1rem;
-	}
+footer small {
+  font-size: 12px;
+  color: #555;
 }
