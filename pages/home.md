@@ -7,16 +7,34 @@ eleventyNavigation:
   key: Home
   order: 0
 ---
-# Welcome
+# Beauty Wejherowo 💆‍♀️
 
-This is a template for building a simple blog website with the [Eleventy static site generator](https://www.11ty.dev), with deployment to [Netlify](https://www.netlify.com).
+Zapraszamy do naszego przytulnego gabinetu masażu w sercu Wejherowa.  
+Zadbaj o swoje ciało i umysł — bo zasługujesz na chwilę relaksu.
 
-Includes [Decap CMS](https://www.decapcms.org) for WYSIWYG content editing, and [Netlify Forms](https://www.netlify.com/docs/form-handling) for processing your site's form data.
+---
 
-[Log in to the Decap CMS dashboard](/admin/)
+## 🌿 Nasze masaże
 
-For more info on installation and usage, view the [project repo]({{ pkg.repository.url }}) on GitHub.
+- **Masaż relaksacyjny** – 60 min – 130 zł  
+- **Masaż klasyczny** – 45 min – 110 zł  
+- **Masaż gorącymi kamieniami** – 75 min – 160 zł  
+- **Masaż sportowy** – 30 min – 90 zł
 
-Or click the button below to deploy your own copy of this project to Netlify.
+---
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/danurbanowicz/eleventy-netlify-boilerplate&stack=cms)
+## 📅 Rezerwacja
+
+[Zarezerwuj wizytę przez Booksy](https://booksy.com/pl-pl)  
+📞 lub zadzwoń: **123 456 789**
+
+---
+
+## 🎁 Vouchery
+
+Szukasz prezentu dla bliskiej osoby?  
+Oferujemy **vouchery na masaż** – napisz do nas lub odwiedź gabinet.
+
+---
+
+Dziękujemy, że jesteś z nami! 💖
