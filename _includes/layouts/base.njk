@@ -5,12 +5,13 @@
 
 	<body>
 
-		<header>
-			<a href="{{ '/' | url }}">
-  <img src="/logo.png" alt="Life is back – Anna Mach" style="height: 60px;">
-</a>
-			{% include "components/nav.njk" %}
-		</header>
+	<header style="display: flex; align-items: center; justify-content: space-between; padding: 10px 20px; border-bottom: 1px solid #eee;">
+  <a href="{{ '/' | url }}">
+    <img src="/logo.png" alt="Life is back – Anna Mach" style="height: 60px;">
+  </a>
+
+  {% include "components/nav.njk" %}
+</header>
 
 		<main>
 			{{ layoutContent | safe }}
