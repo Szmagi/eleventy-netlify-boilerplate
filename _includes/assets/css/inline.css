@@ -138,3 +138,64 @@ footer small {
   font-size: 12px;
   color: #555;
 }
+/* Ukrywanie menu rozwijanego, zanim nie zostanie kliknięte */
+.menu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 60px; /* Dostosuj to do wysokości nagłówka */
+  background-color: #fff; /* Kolor tła */
+  width: 250px; /* Szerokość menu */
+  box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.3); /* Cień, aby dodać głębię */
+  z-index: 1000; /* Upewnij się, że menu jest na wierzchu */
+}
+
+.menu.open {
+  display: block;
+}
+
+/* Stylizacja dla przycisku menu (3 linie) */
+.menu-btn {
+  font-size: 30px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: transparent;
+  border: none;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 25px;
+  width: 30px;
+}
+
+.menu-btn span {
+  background-color: #000;
+  height: 5px;
+  width: 100%;
+}
+
+/* Stylowanie dla elementów w menu */
+.menu a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+}
+
+.menu a:hover {
+  background-color: #f1f1f1;
+}
+
+/* Menu przy kliknięciu w przycisk */
+.navbar {
+  position: relative;
+}
+
+/* Dostosowanie do mniejszych ekranów */
+@media (max-width: 768px) {
+  .menu {
+    top: 50px; /* Dostosuj do wysokości nagłówka */
+  }
+}
