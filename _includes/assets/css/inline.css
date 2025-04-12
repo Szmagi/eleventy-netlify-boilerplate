@@ -112,6 +112,7 @@ header img {
     display: flex;
   }
 }
+
 /* Ukrycie submenu na początku */
 .submenu {
   display: none;
@@ -121,4 +122,3 @@ header img {
 .navbar li:hover .submenu {
   display: block;
 }
-
