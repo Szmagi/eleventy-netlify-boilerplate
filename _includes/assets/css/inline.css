@@ -112,3 +112,13 @@ header img {
     display: flex;
   }
 }
+/* Ukrycie submenu na początku */
+.submenu {
+  display: none;
+}
+
+/* Pokazanie submenu po najechaniu */
+.navbar li:hover .submenu {
+  display: block;
+}
+
