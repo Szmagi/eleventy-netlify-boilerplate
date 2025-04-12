@@ -1,0 +1,33 @@
+collections_config:
+  pages:
+    path: ''
+    name: Pages
+    icon: wysiwyg
+  admin:
+    path: admin
+    name: Admin
+    icon: adb
+  pages_1:
+    path: pages
+    name: Pages 1
+    icon: pages
+  posts:
+    path: posts
+    name: Posts
+    icon: event_available
+  data:
+    path: _data
+    name: Data
+    icon: data_usage
+    disable_url: true
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
+paths:
+  static: ''
+  uploads: uploads
+timezone: Europe/Warsaw
+markdown:
+  engine: commonmark
+  options:
+    html: true
