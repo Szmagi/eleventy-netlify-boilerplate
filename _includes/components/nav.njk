@@ -1,10 +1,11 @@
-<nav>
-  {% set navPages = collections.all | eleventyNavigation %}
-  <ul>
-    {%- for entry in navPages %}
-      <li>
-        <a href="{{ entry.url | url }}"{% if entry.url == page.url %} data-current="current item"{% endif %}>{{ entry.title }}</a>
-      </li>
-    {%- endfor %}
-  </ul>
+<nav style="background: #fff; padding: 15px; border-bottom: 1px solid #ccc; text-align: center; font-family: sans-serif;">
+  <a href="/" style="margin: 0 12px; text-decoration: none; font-weight: bold;">Strona główna</a>
+  <a href="/about/" style="margin: 0 12px; text-decoration: none;">O nas</a>
+  <a href="/cennik/" style="margin: 0 12px; text-decoration: none;">Cennik</a>
+  <a href="/opinie/" style="margin: 0 12px; text-decoration: none;">Opinie</a>
+  <a href="/rezerwacje/" style="margin: 0 12px; text-decoration: none;">Rezerwacje</a>
+  <a href="/zdjecia/" style="margin: 0 12px; text-decoration: none;">Zdjęcia</a>
+  <a href="/promocje/" style="margin: 0 12px; text-decoration: none;">Promocje</a>
+  <a href="/kontakt/" style="margin: 0 12px; text-decoration: none;">Kontakt</a>
+  <a href="/vouchery/" style="margin: 0 12px; text-decoration: none;">Vouchery</a>
 </nav>
