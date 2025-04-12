@@ -1,5 +1,4 @@
-// Funkcja do otwierania i zamykania menu
+// Funkcja otwierająca menu po kliknięciu
 document.getElementById('menu-toggle').addEventListener('click', function() {
-  var menu = document.getElementById('menu');  // Pobierz element menu
-  menu.classList.toggle('open');  // Dodaj lub usuń klasę 'open'
+  document.getElementById('menu').classList.toggle('show');
 });
