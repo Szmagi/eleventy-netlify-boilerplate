@@ -1,4 +1,4 @@
-/* Istniejące style - nie zmieniamy ich */
+/* Ustawienia ogólne strony */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -25,100 +25,41 @@ header img {
   object-fit: contain;
 }
 
-/* Hamburger menu - przycisk menu */
-.menu-toggle {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  width: 30px;
-  height: 21px;
-  cursor: pointer;
-}
-
-.menu-toggle .bar {
-  height: 3px;
-  width: 100%;
-  background-color: #333;
-  border-radius: 5px;
-}
-
-/* Menu na urządzenia mobilne */
-.menu {
-  display: none;
-  position: absolute;
-  left: 0;
-  top: 60px; /* Dostosuj to do wysokości nagłówka */
-  background-color: #fff; /* Kolor tła */
-  width: 250px; /* Szerokość menu */
-  box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.3); /* Cień, aby dodać głębię */
-  z-index: 1000; /* Upewnij się, że menu jest na wierzchu */
+/* Pływające menu */
+#menu {
+  position: fixed;
+  top: 0;
+  left: -250px; /* Menu jest początkowo ukryte poza ekranem */
+  width: 250px;
+  height: 100%;
+  background-color: #fff;
+  box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
   transition: transform 0.3s ease;
 }
 
-.menu.open {
-  display: block;
-  transform: translateX(0); /* Pokazuje menu */
+/* Menu pojawia się po najechaniu na sekcję */
+header:hover + #menu {
+  left: 0; /* Menu przesuwa się na ekran */
 }
 
-/* Stylizacja dla elementów w menu */
-.menu a {
-  display: block;
-  padding: 10px;
+#menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#menu ul li {
+  padding: 15px;
+  border-bottom: 1px solid #ccc;
+}
+
+#menu ul li a {
   text-decoration: none;
   color: #333;
   font-size: 16px;
 }
 
-.menu a:hover {
+#menu ul li a:hover {
   background-color: #f1f1f1;
-}
-
-/* Styl dla nawigacji */
-.navbar {
-  position: relative;
-}
-
-/* Dostosowanie do mniejszych ekranów */
-@media (max-width: 768px) {
-  .navbar {
-    display: none;
-    flex-direction: column;
-  }
-
-  .navbar li {
-    margin-left: 0;
-  }
-
-  /* Menu rozwijane */
-  #menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #dcdcdc;
-    width: 250px;
-    height: 100%;
-    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.2);
-    transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
-    z-index: 1000;
-  }
-
-  #menu.show {
-    transform: translateX(0); /* Menu się rozwija */
-  }
-
-  /* Dostosowanie przycisku menu */
-  .menu-btn {
-    display: flex;
-  }
-}
-
-/* Ukrycie submenu na początku */
-.submenu {
-  display: none;
-}
-
-/* Pokazanie submenu po najechaniu */
-.navbar li:hover .submenu {
-  display: block;
 }
