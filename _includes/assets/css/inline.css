@@ -7,10 +7,11 @@ body {
 
 header {
   display: flex;
-  justify-content: space-start;
+  justify-content: flex-start;
   align-items: center;
   padding: 20px 40px;
   background-color: #dcdcdc;
+  gap: 20px; /* adds space between logo and menu */
 }
 
 header img {
@@ -18,12 +19,19 @@ header img {
   object-fit: contain;
 }
 
+/* Wrapper for menu icon and label */
+.menu-hover-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
 /* Hamburger icon */
 .menu-icon {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  cursor: pointer;
 }
 
 .menu-icon span {
@@ -67,4 +75,12 @@ header img {
   text-decoration: none;
   color: #333;
   font-size: 18px;
+  font-weight: bold;
+}
+
+/* Menu label */
+.menu-label {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
 }
