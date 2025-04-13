@@ -84,3 +84,10 @@ header img {
   font-size: 18px;
   color: #333;
 }
+/* Menu label */
+.menu-label {
+  font-weight: bold;
+  font-size: 18px;
+  color: #333;
+}
+
