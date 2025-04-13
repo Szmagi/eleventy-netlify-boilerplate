@@ -1,4 +1,5 @@
-/* Ustawienia ogólne strony */
+
+/* General styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -25,7 +26,7 @@ header img {
   object-fit: contain;
 }
 
-/* Pływające menu */
+/* Floating Menu (pływające menu) */
 #menu {
   position: fixed;
   top: 0;
@@ -38,7 +39,7 @@ header img {
   transition: transform 0.3s ease;
 }
 
-/* Menu pojawia się po najechaniu na sekcję */
+/* Menu, które pojawia się po najechaniu na nagłówek */
 header:hover + #menu {
   left: 0; /* Menu przesuwa się na ekran */
 }
