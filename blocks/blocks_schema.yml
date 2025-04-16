@@ -1,0 +1,40 @@
+gallery:
+  name: Galeria
+  fields:
+    - name: title
+      label: Tytuł
+      type: text
+    - name: images
+      label: Zdjęcia
+      type: image
+      multiple: true
+
+video:
+  name: Film YouTube
+  fields:
+    - name: title
+      label: Tytuł
+      type: text
+    - name: youtube_id
+      label: YouTube ID
+      type: text
+
+text:
+  name: Sekcja tekstowa
+  fields:
+    - name: title
+      label: Tytuł
+      type: text
+    - name: body
+      label: Treść
+      type: markdown
+
+image:
+  name: Obraz z podpisem
+  fields:
+    - name: image
+      label: Obrazek
+      type: image
+    - name: caption
+      label: Podpis
+      type: text
