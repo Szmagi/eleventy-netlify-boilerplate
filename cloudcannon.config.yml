@@ -3,18 +3,22 @@ collections_config:
     path: ''
     name: Pages
     icon: wysiwyg
+
   admin:
     path: admin
     name: Admin
     icon: adb
+
   pages_1:
     path: pages
     name: Pages 1
     icon: pages
+
   posts:
     path: posts
     name: Posts
     icon: event_available
+
   data:
     path: _data
     name: Data
@@ -23,10 +27,31 @@ collections_config:
     disable_add: true
     disable_add_folder: true
     disable_file_actions: true
+
+  blocks:
+    path: _blocks
+    name: Bloki
+    icon: view_module
+    editor:
+      type: component
+      label: Typ bloku
+    component_fields:
+      - name: type
+        label: Typ bloku
+        type: select
+        options:
+          - galeria
+          - film
+          - kafel
+          - tekst
+          - obraz_z_podpisem
+
 paths:
   static: ''
   uploads: uploads
+
 timezone: Europe/Warsaw
+
 markdown:
   engine: commonmark
   options:
