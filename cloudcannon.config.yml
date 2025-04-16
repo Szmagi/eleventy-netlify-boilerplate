@@ -1,3 +1,4 @@
+
 collections_config:
   pages:
     path: ''
@@ -45,6 +46,12 @@ collections_config:
           - kafel
           - tekst
           - obraz_z_podpisem
+  bloki:
+    path: blocks
+    name: Bloki
+    icon: view_module
+    editor:
+      schema: blocks/blocks_schema.yml
 
 paths:
   static: ''
