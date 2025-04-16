@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    {% include "components/head.njk" %}
+  </head>
+  <body>
+    {% include "components/header.njk" %}
+    <main style="padding: 20px;">
+      <h1>{{ title }}</h1>
+      <div>{{ content | safe }}</div>
+    </main>
+    {% include "components/footer.njk" %}
+  </body>
+</html>
