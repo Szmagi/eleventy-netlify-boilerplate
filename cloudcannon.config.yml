@@ -127,9 +127,65 @@ collections_config:
           options:
             - galeria
             - film
-            - kafel
             - tekst
             - obraz_z_podpisem
-      default:
-        type: default
-        title: Nowy blok
+      structures:
+        galeria:
+          label: Galeria
+          fields:
+            - name: type
+              type: hidden
+              value: galeria
+            - name: title
+              label: Tytuł
+              type: text
+            - name: images
+              label: Zdjęcia
+              type: image
+              multiple: true
+        film:
+          label: Film YouTube
+          fields:
+            - name: type
+              type: hidden
+              value: film
+            - name: title
+              label: Tytuł
+              type: text
+            - name: youtube_id
+              label: YouTube ID
+              type: text
+        tekst:
+          label: Sekcja tekstowa
+          fields:
+            - name: type
+              type: hidden
+              value: tekst
+            - name: title
+              label: Tytuł
+              type: text
+            - name: body
+              label: Treść
+              type: markdown
+        obraz_z_podpisem:
+          label: Obraz z podpisem
+          fields:
+            - name: type
+              type: hidden
+              value: obraz_z_podpisem
+            - name: image
+              label: Obrazek
+              type: image
+            - name: caption
+              label: Podpis
+              type: text
+
+paths:
+  static: uploads
+
+timezone: Europe/Warsaw
+
+markdown:
+  engine: commonmark
+  options:
+    html: true
