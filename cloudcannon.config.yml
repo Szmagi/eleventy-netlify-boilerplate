@@ -3,36 +3,83 @@ collections_config:
     path: pages
     name: Pages
     icon: wysiwyg
-    new_page_template: _defaults.md
     editor:
+      path: _defaults.md
       schema:
         - name: layout
           label: Layout
           type: text
           default: layouts/page.njk
+        - name: section
+          label: Sekcja
+          type: text
         - name: title
           label: Tytuł
           type: text
         - name: permalink
           label: Permalink
           type: text
-        - name: type
-          label: Typ
-          type: text
-        - name: blocks
-          label: Bloki
-          type: include
-          options:
-            path: blocks
-            label: title
-            value: _id
-          multiple: true
         - name: date
           label: Data
           type: datetime
         - name: eleventyNavigation
           label: Nawigacja
           type: object
+        - name: blocks
+          label: Bloki
+          type: array
+          structure:
+            type_key: type
+            templates:
+              galeria:
+                label: Galeria
+                fields:
+                  - name: title
+                    label: Tytuł
+                    type: text
+                  - name: images
+                    label: Zdjęcia
+                    type: image
+                    multiple: true
+              film:
+                label: Film YouTube
+                fields:
+                  - name: title
+                    label: Tytuł
+                    type: text
+                  - name: youtube_id
+                    label: YouTube ID
+                    type: text
+              tekst:
+                label: Sekcja tekstowa
+                fields:
+                  - name: title
+                    label: Tytuł
+                    type: text
+                  - name: body
+                    label: Treść
+                    type: markdown
+              kafel:
+                label: Kafel
+                fields:
+                  - name: title
+                    label: Tytuł
+                    type: text
+                  - name: image
+                    label: Obrazek
+                    type: image
+                  - name: url
+                    label: URL
+                    type: text
+              obraz_z_podpisem:
+                label: Obraz z podpisem
+                fields:
+                  - name: image
+                    label: Obrazek
+                    type: image
+                  - name: caption
+                    label: Podpis
+                    type: text
 
   admin:
     path: admin
@@ -44,43 +91,42 @@ collections_config:
     name: Posts
     icon: event_available
 
-  data:
-    path: _data
-    name: Data
-    icon: data_usage
-    disable_url: true
-    disable_add: true
-    disable_add_folder: true
-    disable_file_actions: true
+data:
+  path: _data
+  name: Data
+  icon: data_usage
+  disable_url: true
+  disable_add: true
+  disable_add_folder: true
+  disable_file_actions: true
 
-  blocks:
-    path: blocks
-    name: Bloki
-    icon: view_module
-    editor:
-      type: component
-      label: Typ bloku
-      component_fields:
-        - name: type
-          label: Typ bloku
-          type: select
-          options:
-            - galeria
-            - film
-            - kafel
-            - tekst
-            - obraz_z_podpisem
+blocks:
+  path: blocks
+  name: Bloki
+  icon: view_module
+  editor:
+    type: component
+    label: Typ bloku
+    component_fields:
+      - name: type
+        label: Typ bloku
+        type: select
+        options:
+          - galeria
+          - film
+          - kafel
+          - tekst
+          - obraz_z_podpisem
 
-  bloki:
-    path: blocks
-    name: Bloki
-    icon: view_module
-    editor:
-      schema: blocks/blocks_schema.yml
+bloki:
+  path: blocks
+  name: Bloki
+  icon: view_module
+  editor:
+    schema: blocks/blocks_schema.yml
 
 paths:
-  static: ''
-  uploads: uploads
+  static: uploads
 
 timezone: Europe/Warsaw
 
