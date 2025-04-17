@@ -37,69 +37,12 @@ collections_config:
               label: Parent
         - name: blocks
           label: Blocks
-          type: array
-          structures:
-            - name: galeria
-              label: Galeria
-              schema:
-                - name: type
-                  type: hidden
-                  value: galeria
-                - name: title
-                  label: Tytuł
-                  type: text
-                - name: images
-                  label: Zdjęcia
-                  type: image
-                  multiple: true
-            - name: film
-              label: Film YouTube
-              schema:
-                - name: type
-                  type: hidden
-                  value: film
-                - name: title
-                  label: Tytuł
-                  type: text
-                - name: youtube_id
-                  label: YouTube ID
-                  type: text
-            - name: kafel
-              label: Kafel
-              schema:
-                - name: type
-                  type: hidden
-                  value: kafel
-                - name: title
-                  label: Tytuł
-                  type: text
-                - name: body
-                  label: Treść
-                  type: markdown
-            - name: tekst
-              label: Sekcja tekstowa
-              schema:
-                - name: type
-                  type: hidden
-                  value: tekst
-                - name: title
-                  label: Tytuł
-                  type: text
-                - name: body
-                  label: Treść
-                  type: markdown
-            - name: obraz_z_podpisem
-              label: Obraz z podpisem
-              schema:
-                - name: type
-                  type: hidden
-                  value: obraz_z_podpisem
-                - name: image
-                  label: Obrazek
-                  type: image
-                - name: caption
-                  label: Podpis
-                  type: text
+          type: include
+          options:
+            path: blocks
+            label: title
+            value: _id
+            multiple: true
 
   admin:
     path: admin
@@ -120,7 +63,7 @@ collections_config:
     disable_add_folder: true
     disable_file_actions: true
 
-  block:
+  blocks:
     path: blocks
     name: Bloki
     icon: view_module
@@ -137,12 +80,6 @@ collections_config:
             - kafel
             - tekst
             - obraz_z_podpisem
-
-  bloki:
-    path: blocks
-    name: Bloki
-    icon: view_module
-    editor:
       schema: blocks/blocks_schema.yml
 
 paths:
