@@ -10,7 +10,8 @@ section: page
     <h1>{{ title }}</h1>
 
     {% for block in blocks %}
-      {% include "blocks/" ~ block.type ~ ".njk" with block %}
+      {% set template = "blocks/" + block.type + ".njk" %}
+      {% include template %}
     {% endfor %}
 
   </main>
