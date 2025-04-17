@@ -5,3 +5,15 @@ section: page
 <h1>{{ title }}</h1>
 
 {{ layoutContent | safe }}
+
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <main>
+    <h1>{{ title }}</h1>
+
+    {% for block in blocks %}
+      {% include "blocks/" + block.type + ".njk" with block %}
+    {% endfor %}
+  </main>
+{% endblock %}
