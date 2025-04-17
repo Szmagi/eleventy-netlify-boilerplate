@@ -1,0 +1,8 @@
+<section class="gallery">
+  <h2>{{ title }}</h2>
+  <div class="gallery-grid">
+    {% for image in images %}
+      <img src="{{ image }}" alt="">
+    {% endfor %}
+  </div>
+</section>
