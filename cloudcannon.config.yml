@@ -4,82 +4,45 @@ collections_config:
     name: Pages
     icon: wysiwyg
     editor:
-      path: _defaults.md
       schema:
         - name: layout
           label: Layout
           type: text
           default: layouts/page.njk
         - name: section
-          label: Sekcja
+          label: Section
           type: text
+          default: page
         - name: title
-          label: Tytuł
+          label: Title
           type: text
         - name: permalink
           label: Permalink
           type: text
         - name: date
-          label: Data
+          label: Date
           type: datetime
         - name: eleventyNavigation
-          label: Nawigacja
+          label: Eleventy Navigation
           type: object
+          schema:
+            - name: key
+              type: text
+              label: Key
+            - name: order
+              type: number
+              label: Order
+            - name: parent
+              type: text
+              label: Parent
         - name: blocks
-          label: Bloki
-          type: array
-          structure:
-            type_key: type
-            templates:
-              galeria:
-                label: Galeria
-                fields:
-                  - name: title
-                    label: Tytuł
-                    type: text
-                  - name: images
-                    label: Zdjęcia
-                    type: image
-                    multiple: true
-              film:
-                label: Film YouTube
-                fields:
-                  - name: title
-                    label: Tytuł
-                    type: text
-                  - name: youtube_id
-                    label: YouTube ID
-                    type: text
-              tekst:
-                label: Sekcja tekstowa
-                fields:
-                  - name: title
-                    label: Tytuł
-                    type: text
-                  - name: body
-                    label: Treść
-                    type: markdown
-              kafel:
-                label: Kafel
-                fields:
-                  - name: title
-                    label: Tytuł
-                    type: text
-                  - name: image
-                    label: Obrazek
-                    type: image
-                  - name: url
-                    label: URL
-                    type: text
-              obraz_z_podpisem:
-                label: Obraz z podpisem
-                fields:
-                  - name: image
-                    label: Obrazek
-                    type: image
-                  - name: caption
-                    label: Podpis
-                    type: text
+          label: Blocks
+          type: include
+          options:
+            path: blocks
+            label: title
+            value: _id
+            multiple: true
 
   admin:
     path: admin
@@ -91,39 +54,39 @@ collections_config:
     name: Posts
     icon: event_available
 
-data:
-  path: _data
-  name: Data
-  icon: data_usage
-  disable_url: true
-  disable_add: true
-  disable_add_folder: true
-  disable_file_actions: true
+  data:
+    path: _data
+    name: Data
+    icon: data_usage
+    disable_url: true
+    disable_add: true
+    disable_add_folder: true
+    disable_file_actions: true
 
-blocks:
-  path: blocks
-  name: Bloki
-  icon: view_module
-  editor:
-    type: component
-    label: Typ bloku
-    component_fields:
-      - name: type
-        label: Typ bloku
-        type: select
-        options:
-          - galeria
-          - film
-          - kafel
-          - tekst
-          - obraz_z_podpisem
+  block:
+    path: blocks
+    name: Bloki
+    icon: view_module
+    editor:
+      type: component
+      label: Typ bloku
+      component_fields:
+        - name: type
+          label: Typ bloku
+          type: select
+          options:
+            - galeria
+            - film
+            - kafel
+            - tekst
+            - obraz_z_podpisem
 
-bloki:
-  path: blocks
-  name: Bloki
-  icon: view_module
-  editor:
-    schema: blocks/blocks_schema.yml
+  bloki:
+    path: blocks
+    name: Bloki
+    icon: view_module
+    editor:
+      schema: blocks/blocks_schema.yml
 
 paths:
   static: uploads
