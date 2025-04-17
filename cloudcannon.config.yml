@@ -3,36 +3,22 @@ collections_config:
     path: pages
     name: Pages
     icon: wysiwyg
+    new_page_template: _defaults.md
     editor:
       schema:
         - name: layout
           label: Layout
-          type: hidden
+          type: text
           default: layouts/page.njk
-        - name: section
-          label: Sekcja
-          type: hidden
-          default: page
         - name: title
           label: Tytuł
           type: text
         - name: permalink
           label: Permalink
           type: text
-        - name: date
-          label: Data
-          type: datetime
-        - name: eleventyNavigation
-          label: Nawigacja
-          type: object
-          schema:
-            - name: key
-              label: Klucz
-              type: text
-            - name: order
-              label: Kolejność
-              type: number
-              default: 0
+        - name: type
+          label: Typ
+          type: text
         - name: blocks
           label: Bloki
           type: include
@@ -41,6 +27,12 @@ collections_config:
             label: title
             value: _id
           multiple: true
+        - name: date
+          label: Data
+          type: datetime
+        - name: eleventyNavigation
+          label: Nawigacja
+          type: object
 
   admin:
     path: admin
