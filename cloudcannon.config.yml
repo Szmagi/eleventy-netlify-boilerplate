@@ -1,4 +1,3 @@
-
 collections_config:
   pages:
     path: pages
@@ -26,11 +25,6 @@ collections_config:
     name: Admin
     icon: adb
 
-  pages_1:
-    path: pages
-    name: Pages 1
-    icon: pages
-
   posts:
     path: posts
     name: Posts
@@ -46,22 +40,23 @@ collections_config:
     disable_file_actions: true
 
   blocks:
-    path: _blocks
+    path: blocks
     name: Bloki
     icon: view_module
     editor:
       type: component
       label: Typ bloku
-    component_fields:
-      - name: type
-        label: Typ bloku
-        type: select
-        options:
-          - galeria
-          - film
-          - kafel
-          - tekst
-          - obraz_z_podpisem
+      component_fields:
+        - name: type
+          label: Typ bloku
+          type: select
+          options:
+            - galeria
+            - film
+            - kafel
+            - tekst
+            - obraz_z_podpisem
+
   bloki:
     path: blocks
     name: Bloki
