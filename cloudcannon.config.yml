@@ -110,8 +110,8 @@ collections_config:
     disable_file_actions: true
 
   block_components:
-    path: blocks
-    name: Bloki
+    path: block-library
+    name: Bloki (komponenty)
     icon: view_module
     editor:
       type: component
@@ -126,7 +126,7 @@ collections_config:
             - kafel
             - tekst
             - obraz_z_podpisem
-      schema: blocks/blocks_schema.yml
+      schema: block-library/blocks_schema.yml
 
 paths:
   static: uploads
