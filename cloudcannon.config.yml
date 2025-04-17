@@ -42,6 +42,7 @@ collections_config:
             structures:
               galeria:
                 label: Galeria
+                icon: image
                 fields:
                   - name: type
                     type: hidden
@@ -55,6 +56,7 @@ collections_config:
                     multiple: true
               film:
                 label: Film YouTube
+                icon: play_circle
                 fields:
                   - name: type
                     type: hidden
@@ -67,6 +69,7 @@ collections_config:
                     type: text
               tekst:
                 label: Sekcja tekstowa
+                icon: subject
                 fields:
                   - name: type
                     type: hidden
@@ -79,6 +82,7 @@ collections_config:
                     type: markdown
               obraz_z_podpisem:
                 label: Obraz z podpisem
+                icon: image
                 fields:
                   - name: type
                     type: hidden
@@ -109,8 +113,8 @@ collections_config:
     disable_add_folder: true
     disable_file_actions: true
 
-  block_components:
-    path: block-library
+  blocks:
+    path: blocks
     name: Bloki (komponenty)
     icon: view_module
     editor:
@@ -126,14 +130,6 @@ collections_config:
             - kafel
             - tekst
             - obraz_z_podpisem
-      schema: block-library/blocks_schema.yml
-
-paths:
-  static: uploads
-
-timezone: Europe/Warsaw
-
-markdown:
-  engine: commonmark
-  options:
-    html: true
+      default:
+        type: default
+        title: Nowy blok
